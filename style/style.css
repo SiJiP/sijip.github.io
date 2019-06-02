@@ -4,10 +4,15 @@
     font-family: 'Roboto', sans-serif;
 }
 .center{
-    max-width: 1280px;
+    max-width: 1140px;
+    width: 100%;
     display: flex;
+
+}
+.justify-space-between{
     justify-content: space-between;
 }
+
 #navbar {
     display: flex;
     display: -ms-flex;
@@ -46,4 +51,13 @@
     color: rgb(255, 255, 255);
     border-radius: 2em;
     justify-self: right;
+    cursor: pointer;
+}
+#top-button button:hover{
+    background-color: rgba(30, 150, 242, 1);
+
+}
+.base-screen{
+    background-color: rgb(36, 39, 48);
+    height: 1200px;
 }
