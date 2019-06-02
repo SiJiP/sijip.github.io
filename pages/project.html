@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <nav id="navbar">
         <div class="center justify-space-between">
@@ -24,7 +26,31 @@
             </div>
         </div>
     </nav>
-    <h1>Here will be my project...soon....</h1>
+    <main>
+        <div class="input">
+            <label for="start">From:</label><br>
+            <input type="date" id="start" name="start" value="2019-03-22" min="2018-01-01" max="2019-12-31">
+        </div>
+        <div class="input">
+            <label for="start">To:</label><br>
+            <input type="date" id="end" name="end" value="2019-03-22" min="2018-01-01" max="2019-12-31">
+        </div>
+        <div class="input">
+            <select name="currency" id="currency">
+                <option value="usd">USD</option>
+                <option value="rub">RUB</option>
+                <option value="eur">EUR</option>
+                <option value="czk">CZK</option>
+                <option value="pln">PLN</option>
+                <option value="uah">UAH</option>
+            </select>
+        </div>
+        <div class="input">
+            <button type="submit"> Submit </button>
+        </div>
+    </main>
+    <h1>Here will be chart...soon....</h1>
     <span><a href="../index.html">Go to back</a></span>
 </body>
+
 </html>
