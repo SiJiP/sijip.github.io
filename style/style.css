@@ -5,75 +5,141 @@
 }
 
 
-.center{
-    max-width: 1140px;
-    width: 100%;
-    display: flex;
+/*animation*/
+@keyframes slide-down{
+    from
+    {
+        height: 0%;
+    }
+    to
+    {
+        height: 100%;
+    }
+}
+/****************/
+/**********************************/
 
+#navbar {
+    overflow: hidden;
+    background-color: rgba(33, 33, 33, 1);
+    position: relative;
+    display: block;
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.5);
+    
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+#navbar .close {
+    display: none;
+}
+
+/* Style navigation menu links */
+#burger {
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+    cursor: pointer;
+   
+}
+
+
+.container{
+    max-width: 1240px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 .justify-space-between{
     justify-content: space-between;
 }
-
-#navbar {
-    display: flex;
-    display: -ms-flex;
-    display: -webkit-flex;
-    justify-content: center ;
-    background-color: rgba(33, 33, 33, 1);
+#links{
+    display:block;
+   
 }
 
-#navbar li {
+#links li{
     list-style: none;
-    display: inline-flex;
-    padding: 1.5em 1em;
 }
 
-#navbar li:hover {
-    background-color: rgba(10, 10, 10, 1);
-}
-
-#navbar li:active {
-    color: rgba(250, 240, 180, 1);
-}
-
-#navbar a {
+#links a {
+    color: white;
+    padding: 14px 16px;
     text-decoration: none;
-    color: rgba(131, 208, 242, 1);
-    font-weight: 400;
+    font-size: 17px;
+    display: block;
+    text-align: center;
 }
-#top-button{
-    display: flex;
-}
-#top-button button{
+
+#log-in-button {
     background-color: transparent;
     border: 2px solid rgba(30, 150, 242, 1);
-    padding: 0 2rem;
-    margin: 0.5em ;
+    padding: 0.6em;
+    margin: 10px;
     color: rgb(255, 255, 255);
     border-radius: 2em;
-    justify-self: right;
     cursor: pointer;
+    width: 120px;
+    display: block;
+    float: right;
+    font-size: 1em;
 }
-#top-button button:hover{
+
+#log-in-button:hover {
     background-color: rgba(30, 150, 242, 1);
 
 }
-.base-screen{
+
+
+/*animation hamburger*/
+#burger div {
+    width: 30px;
+    height: 4px;
+    background-color: rgba(131, 208, 242, 1);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px) ;
+    transform: rotate(-45deg) translate(-6px, 6px) ;
+  }
+  
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+
+/*end style burger*/
+.base-screen {
     background-color: rgb(36, 39, 48);
     height: 1200px;
 }
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    ...
+}
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    ...
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    ...
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    ...
+}
 
 
 
@@ -86,4 +152,3 @@
 
 
 /*FINANCE PROJECT CSS*/
-
