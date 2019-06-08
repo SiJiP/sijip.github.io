@@ -18,47 +18,54 @@
 }
 
 
-body {
-    position: relative;
-}
 
 /**************************************
         header
 ****************************/
+
+.header-background{
+    background-color: #212121;
+}
 #navbar {
     overflow: hidden;
-    background-color: rgba(33, 33, 33, 1);
-
 }
 
-#navbar .close {
+.hide-navbar {
     display: none;
+}
+.d-flex{
+    display: flex;
+}
+.container{
+    width: 100%;
+}
+
+.justify-space-between{
+    justify-content: space-between;
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-#log-in-button {
+#navbar-login-button {
     background-color: transparent;
     max-width: 150px;
     flex-wrap: nowrap;
     margin: 0 0.5rem;
+    font-size: 1rem;
 }
 
 .all-button {
-    border: 2px solid rgba(131, 208, 242, 1);
+    border: 2px solid #83d0f2;
     padding: 0.4rem 1.5rem;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     cursor: pointer;
-    font-size: 1rem;
     text-align: center;
 }
 
 #log-in-button:hover {
-    background-color: rgba(131, 208, 242, 1);
+    background-color: #83d0f2;
 
 }
 
@@ -68,7 +75,6 @@ navbar links
 **************/
 
 #links {
-    display: flex;
     animation: slide-down 2s;
 }
 
@@ -78,9 +84,9 @@ li {
 
 #links a {
     color: white;
-    padding: 14px 16px;
+    padding: 0.9rem 1rem;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.1rem;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -92,11 +98,11 @@ li {
 }
 
 #links li:hover {
-    border-bottom: 3px solid rgba(131, 208, 242, 1);
+    border-bottom: 3px solid #83d0f2;
 }
 
 #links li:active {
-    border-bottom: 3px solid rgba(131, 208, 242, 1);
+    border-bottom: 3px solid #83d0f2;
 }
 
 
@@ -111,14 +117,13 @@ hamburger
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    display: inline-block;
     cursor: pointer;
 }
 
 #burger div {
     width: 30px;
     height: 4px;
-    background-color: rgba(131, 208, 242, 1);
+    background-color: #83d0f2;
     margin: 6px 0;
     transition: 0.4s;
     display: flex;
@@ -141,106 +146,6 @@ hamburger
 /*********************
 login-popup
 **********************/
-
-#login-popup {
-    width: 90vw;
-    position: absolute;
-    display: none;
-    background-color: #fff;
-    top: 3%;
-    flex-direction: column;
-    max-width: 550px;
-    margin: 0 auto;
-}
-
-#login-popup h2 {
-    font-weight: 300;
-    margin-left: 0.5rem;
-}
-
-.x {
-    cursor: pointer;
-    display: flex;
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: 40px;
-    top: 25px;
-}
-
-.x .x1,
-.x2 {
-    width: 30px;
-    height: 3px;
-    background-color: rgba(131, 208, 242, 1);
-    display: flex;
-    position: absolute;
-
-    cursor: pointer;
-}
-
-
-.x .x1 {
-    transform: rotate(-45deg);
-
-}
-
-.x .x2 {
-    transform: rotate(45deg);
-}
-
-.header-popup {
-    padding: 0.5rem;
-    height: 40px;
-    color: #fff;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    background-color: rgba(33, 33, 33, 1);
-}
-
-#main-popup {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-#login-form {
-    padding: 1rem;
-}
-
-#login-form label {
-    font-size: 1.2rem;
-    margin: 0 0.3rem;
-    ;
-}
-
-#login-form .input-text {
-    display: block;
-    height: 30px;
-    width: 90%;
-    margin: 0.2rem auto 1rem auto;
-    border: 1.5px solid rgb(36, 39, 48);
-    padding: 0.5rem;
-    font-size: 1rem;
-}
-
-
-#login-form .input-text:valid {
-    border: 1.5px solid rgb(122, 255, 110);
-}
-
-#login-form .input-text:invalid {
-    border: 1.5px solid rgb(255, 59, 59);
-}
-
-.inside-button {
-    background-color: rgba(131, 208, 242, 1);
-    width: 90%;
-    display: block;
-    margin: 2rem auto;
-}
-
 
 
 
@@ -277,8 +182,10 @@ login-popup
 @media (min-width: 992px) {
   
     #navbar {
-        display: flex;
         justify-content: center;
+    }
+    .d-flex-lg{
+        display: flex;
     }
 
     .container {
@@ -289,16 +196,19 @@ login-popup
         width: 100%;
     }
 
-    #navbar .close {
+    .hide-navbar {
         display: flex;
     }
 
-    #burger {
+    .d-none-lg {
         display: none;
     }
 
     #links {
         order: 1;
+    }
+    #links li {
+        display: inline-flex;
     }
 
     .header-container {
