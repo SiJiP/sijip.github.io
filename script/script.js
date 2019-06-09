@@ -1,21 +1,27 @@
   let burger = document.getElementById('burger');
-  let logClose = document.querySelector('.x');
-  let loginPop = document.getElementById('login-popup');
-  let logTop = document.getElementById('log-in-button');
+  let closePopup = document.querySelector('.x');
+  let loginPopBox = document.getElementById('login-popup');
+  let logButton = document.getElementById('navbar-login-button');
+  let links = document.getElementById("links");
+
+
+  //event for hidden navbar
   burger.addEventListener('click', function () {
-      let links = document.getElementById("links");
+
       if (links.style.display === "block") {
-          links.style.display = "none";
+          links.classList.toggle('d-flex-ul');
           burger.classList.toggle("change");
       } else {
           burger.classList.toggle("change");
-          links.style.display = "block";
+          links.classList.toggle('d-flex-ul');
       }
   });
 
-  logClose.addEventListener('click', (e)=>{
-      loginPop.style.display = "none";
+
+  // events for login popup
+  closePopup.addEventListener('click', (e)=>{
+    loginPopBox.style.display = "none";
   })
-  logTop.addEventListener('click', ()=>{
-    loginPop.style.display = "block";
+  logButton.addEventListener('click', ()=>{
+    loginPopBox.style.display = "block";
   })
