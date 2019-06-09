@@ -262,6 +262,7 @@ login-popup
     width: 100%;
     border: 0;
     margin-top: 10px;
+    background-color: #ffffff;
 }
 
 .input-form:focus {
