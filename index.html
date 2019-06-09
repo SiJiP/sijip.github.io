@@ -14,17 +14,18 @@
 </head>
 
 <body>
-    <nav id="navbar">
+    <nav id="navbar" class="header-background d-flex-lg">
         <div class="container">
-            <div id="burger">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+            <div class="header-container d-flex justify-space-between">
+                <div id="burger" class="d-none-lg">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <button id="navbar-login-button" class="all-button ">Log In</button>
             </div>
-            <button id="log-in-button" class="button ">Log In</button>
-            <!-- Navigation links (hidden by default) -->
-        
-            <ul id="links" class="close">
+
+            <ul id="links" class="hide-navbar">
                 <li><a href="pages/about_me.html">About me</a></li>
                 <li><a href="pages/blog.html">Blog</a></li>
                 <li><a href="pages/contacts.html">Contacts</a></li>
@@ -50,13 +51,42 @@
                 quasi aliquid, perferendis corporis.</p>
 
         </article>
-        
+
         <section class="base-screen">
             <div></div>
         </section>
     </main>
 
+    <section id="login-popup" class="d-none">
+        <div class="header-popup">
+            <h2>Login Form</h2>
+            <div class="x">
+                <div class="x1"></div>
+                <div class="x2"></div>
+            </div>
+        </div>
+        <div class="main-popup">
+            <form action="#" method="POST" id="login-form" autocomplete="off">
+                <fieldset>
+                    <input type="text" name="login" id="name" class="input-form" required>
+                    <label for="login">Login: </label>
+                    <div class="after-input"></div>
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="mail" id="mail" class="input-form" required>
+                    <label for="email">E-mail: </label>
+                    <div class="after-input"></div>
+                </fieldset>
+                <fieldset>
+                    <input type="password" name="pass" id="pass" class="input-form" required>
+                    <label for="pass">Password: </label>
+                    <div class="after-input"></div>
+                </fieldset>
+                <button class="popup-button">Submit</button>
+            </form>
 
+        </div>
+    </section>
     <script src="script/script.js"></script>
 </body>
 

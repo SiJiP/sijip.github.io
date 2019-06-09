@@ -7,131 +7,407 @@
 
 /*animation*/
 
-@keyframes slide-down{
-    0%{
+@keyframes slide-down {
+    0% {
         max-height: 0;
     }
-    100%{
+
+    100% {
         max-height: 999px;
     }
 }
-/****************/
-/**********************************/
+
+@keyframes pop-down{
+    0%{
+        margin-top: -100%;
+    }
+
+    100%{
+        margin-top: 0;
+    }
+}
+
+
+
+
+
+/**************************************
+        header
+****************************/
+
+.header-background {
+    background-color: #212121;
+}
 
 #navbar {
     overflow: hidden;
-    background-color: rgba(33, 33, 33, 1);
-    position: relative;
-    display: block;
-    box-shadow: 2px 3px 10px rgba(0,0,0,0.5);
 }
 
-
-#navbar .close {
+.hide-navbar {
     display: none;
 }
 
-/* Style navigation menu links */
-#burger {
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: inline-block;
-    cursor: pointer;
-   
+.d-flex {
+    display: flex;
 }
 
+.d-flex-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-.container{
-    max-width: 1240px;
+.d-none {
+    display: none;
+    
+}
+
+.container {
     width: 100%;
-    display: block;
-    margin: 0 auto;
 }
-.justify-space-between{
+
+.justify-space-between {
     justify-content: space-between;
 }
-#links{
-    display:block;
+
+.header-container {
+    align-items: center;
+}
+
+#navbar-login-button {
+    max-width: 150px;
+    flex-wrap: nowrap;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    background: transparent;
+}
+
+#navbar-login-button:hover {
+    background-color: #83d0f2;
+    transition: background-color 0.5s
+}
+
+.all-button {
+    border: 2px solid #83d0f2;
+    padding: 0.4rem 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+
+
+/*************
+navbar links
+**************/
+
+#links {
     animation: slide-down 2s;
 }
 
-#links li{
+li {
     list-style: none;
 }
 
 #links a {
     color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 0.8rem;
+    animation: none;
+    /*padding bottom for animation*/
+}
+
+#links li {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0.8rem 1rem 0 1rem;
+    /*margin bottom for animation*/
+}
+
+#links li::after {
+    content: "";
+    background-color: #83d0f2;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    position: absolute;
+    transform: translateX(-105%);
+}
+
+
+
+#links li:hover::after {
+    content: "";
+    background-color: #83d0f2;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    transform: translateX(0);
+    transition: transform 1s;
+}
+
+
+
+
+
+
+/**************
+hamburger
+*************/
+
+#burger {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    display: block;
-    text-align: center;
-}
-
-#log-in-button {
-    background-color: transparent;
-    border: 2px solid rgba(30, 150, 242, 1);
-    padding: 0.6em;
-    margin: 10px;
-    color: rgb(255, 255, 255);
-    border-radius: 2em;
     cursor: pointer;
-    width: 120px;
-    display: block;
-    float: right;
-    font-size: 1em;
 }
 
-#log-in-button:hover {
-    background-color: rgba(30, 150, 242, 1);
-
-}
-
-
-/*animation hamburger*/
 #burger div {
     width: 30px;
     height: 4px;
-    background-color: rgba(131, 208, 242, 1);
+    background-color: #83d0f2;
     margin: 6px 0;
     transition: 0.4s;
+    display: flex;
 }
-  
-  .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-6px, 6px) ;
-    transform: rotate(-45deg) translate(-6px, 6px) ;
-  }
-  
-  .change .bar2 {
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {
     opacity: 0;
-  }
-  
-  .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
-  }
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*********************
+login-popup
+**********************/
+
+
+
+#login-popup {
+    width: 320px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -160px;
+    box-shadow: 1px 1px 6px;
+    top: 80px;
+    animation: pop-down 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.header-popup {
+    background: #212121;
+    padding: 0.5rem;
+}
+
+.header-popup>h2 {
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.main-popup {
+    background: #ffffff;
+}
+
+#login-form {
+    width: 300px;
+    height: auto;
+    padding: 1.5rem 0.6rem;
+    display: block;
+    background: #ffffff;
+
+}
+
+#login-form fieldset {
+    position: relative;
+    border: none;
+    margin: 1rem auto;
+}
+
+.input-form~label {
+    position: absolute;
+    top: 10px;
+    color: rgba(0, 0, 0, 0.3);
+    transform-origin: left;
+    transition: all 0.3s ease;
+}
+
+.input-form:focus~label {
+    color: #83d0f2;
+}
+
+.input-form:focus~label,
+.input-form:valid~label {
+    top: -6px;
+    transform: scale(0.6, 0.6);
+}
+
+.input-form {
+    font-size: 1.1rem;
+    width: 100%;
+    border: 0;
+    margin-top: 10px;
+}
+
+.input-form:focus {
+    outline: none;
+}
+
+.after-input {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #83d0f2 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+}
+
+.input-form:focus~.after-input {
+    background-position: 0 0;
+}
+
+.popup-button {
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 20px;
+    padding: 2px 10px;
+    color: rgba(0, 0, 0, 0.4);
+    border: none;
+    background: linear-gradient(to right, #83d0f2 50%, transparent 50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: all 0.6s ease;
+}
+
+.popup-button::before {
+    position: absolute;
+    content: "Submit";
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    display: block;
+    background-color: #ffffff;
+}
+
+.popup-button:active,
+.popup-button:focus,
+.popup-button:hover {
+    outline: none;
+    background-position: 0 0;
+    color: #83d0f2;
+}
+
+.x {
+    width: 25px;
+    position: absolute;
+    right: 5px;
+    top: 19px;
+    cursor: pointer;
+}
+
+.x1,
+.x2 {
+    height: 3px;
+    width: auto;
+    background-color: #83d0f2;
+
+}
+
+.x1 {
+    transform: rotate(-45deg) translateX(-2px);
+}
+
+.x2 {
+    transform: rotate(45deg) translateX(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*end style burger*/
 .base-screen {
     background-color: rgb(36, 39, 48);
+    /* background: #ffffff;*/
     height: 1200px;
 }
 
 
 /* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
-    ...
-}
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {
-    ...
-}
+@media (min-width: 768px) {}
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-    ...
+
+    #navbar {
+        justify-content: center;
+    }
+
+    .d-flex-lg {
+        display: flex;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1120px;
+        width: 100%;
+    }
+
+    /*anti-hide bar in large screen*/
+    .hide-navbar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .d-none-lg {
+        display: none;
+    }
+
+    #links {
+        order: 1;
+    }
+
+    #links li {
+        display: inline-flex;
+    }
+
+    .header-container {
+        order: 2;
+    }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
