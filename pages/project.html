@@ -8,6 +8,12 @@
     <title>Project</title>
     <link rel="stylesheet" href="../style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="../script/chart.js"></script>
+
 </head>
 
 <body>
@@ -32,32 +38,37 @@
             </ul>
         </div>
     </nav>
-    <main>
-        <div class="input">
-            <label for="start">From:</label><br>
-            <input type="date" id="start" name="start" value="2019-03-22" min="2018-01-01" max="2019-12-31">
-        </div>
-        <div class="input">
-            <label for="start">To:</label><br>
-            <input type="date" id="end" name="end" value="2019-03-22" min="2018-01-01" max="2019-12-31">
-        </div>
-        <div class="input">
-            <select name="currency" id="currency">
-                <option value="usd">USD</option>
-                <option value="rub">RUB</option>
-                <option value="eur">EUR</option>
-                <option value="czk">CZK</option>
-                <option value="pln">PLN</option>
-                <option value="uah">UAH</option>
-            </select>
-        </div>
-        <div class="input">
-            <button type="submit"> Submit </button>
+    <main class="main-info">
+        <div class="container ">
+            <form action="" method="get" id="chart-form" class="justify-space-between-lg align-items-end-lg">
+                <div class="input-chart-row">
+                    <label for="start">From:</label>
+                    <input type="date" class="chart-input" id="start-date" name="start" min="2018-01-01">
+                </div>
+
+                <div class="input-chart-row">
+                    <label for="end">To:</label>
+                    <input type="date" class="chart-input" id="end-date" name="end" min="2018-01-01">
+                </div>
+
+                <div class="input-chart-row">
+                    <label for="currency">Choose currency: </label>
+                    <select name="currency" id="currency" class="chart-input">
+                        <option value="usd">USD</option>
+                        <option value="rub">RUB</option>
+                        <option value="eur">EUR</option>
+                        <option value="czk">CZK</option>
+                        <option value="pln">PLN</option>
+                        <option value="uah">UAH</option>
+                    </select>
+                </div>
+                <button type="button" class="all-button" id="chart-button" > Submit </button>
+            </form>
+            
         </div>
     </main>
-    <h1>Here will be chart...soon....</h1>
-    <span><a href="../index.html">Go to back</a></span>
 
+    <div id="container-chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     <script src="../script/script.js"></script>
 </body>
 

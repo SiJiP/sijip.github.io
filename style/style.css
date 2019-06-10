@@ -17,18 +17,22 @@
     }
 }
 
-@keyframes pop-down{
-    0%{
+@keyframes pop-down {
+    0% {
         margin-top: -100%;
     }
 
-    100%{
+    100% {
         margin-top: 0;
     }
 }
 
 
-
+.main-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 
 /**************************************
@@ -59,7 +63,7 @@
 
 .d-none {
     display: none;
-    
+
 }
 
 .container {
@@ -118,7 +122,6 @@ li {
     justify-content: center;
     text-align: center;
     padding-bottom: 0.8rem;
-    animation: none;
     /*padding bottom for animation*/
 }
 
@@ -151,7 +154,7 @@ li {
     height: 3px;
     bottom: 0;
     transform: translateX(0);
-    transition: transform 1s;
+    transition: transform 0.6s;
 }
 
 
@@ -344,23 +347,73 @@ login-popup
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*end style burger*/
 .base-screen {
     background-color: rgb(36, 39, 48);
     /* background: #ffffff;*/
     height: 1200px;
 }
+
+/******************
+FINANCE PROJECT CSS
+*******************/
+
+[type="date"] {
+    background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.chart-input {
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 3px 5px;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+}
+
+
+#chart-form{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+   
+}
+
+.input-chart-row{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 0.8rem;
+}
+
+.input-chart-row > label{
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+
+}
+#chart-button{
+    margin: 0.7rem;
+    background-color: transparent;
+    color: black;
+    font-size: 1.2rem;
+}
+#chart-button:hover{
+    background-color: #83d0f2;
+    transition: background-color 1s;
+}
+
+/********************
+***********END*******
+*********************/
+
+
 
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -382,6 +435,7 @@ login-popup
 
     .container {
         display: flex;
+        justify-self: center;
         align-items: center;
         justify-content: space-between;
         max-width: 1120px;
@@ -409,22 +463,22 @@ login-popup
     .header-container {
         order: 2;
     }
-
+    #chart-form{
+        flex-direction: row;
+        width: 100%;
+    }
+    #chart-button{
+        height: 40px;
+    }
+    .align-items-end-lg{
+        align-items: flex-end;
+    }
+    .justify-space-between-lg{
+        justify-content: space-between;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
     ...
 }
-
-
-
-
-
-
-
-
-
-
-
-/*FINANCE PROJECT CSS*/
