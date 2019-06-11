@@ -9,23 +9,23 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
-
+    <script src="script/type-animation.js"></script>
 
 </head>
 
 <body>
-    <nav id="navbar" class="header-background d-flex-lg">
-        <div class="container">
-            <div class="header-container d-flex justify-space-between">
+    <nav id="navbar" class="header-background full-width-background">
+        <div class="container align-items-center d-flex-lg fx-content-space-between">
+            <div class="fx-order-2-lg d-flex fx-content-space-between align-items-center ">
                 <div id="burger" class="d-none-lg">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
                 </div>
-                <button id="navbar-login-button" class="all-button ">Log In</button>
+                <button id="navbar-login-button" class="all-button">Log In</button>
             </div>
 
-            <ul id="links" class="hide-navbar">
+            <ul id="links" class="hide-navbar show-navbar-lg fx-order-1-lg ">
                 <li><a href="pages/about_me.html">About me</a></li>
                 <li><a href="pages/blog.html">Blog</a></li>
                 <li><a href="pages/contacts.html">Contacts</a></li>
@@ -36,25 +36,14 @@
             </ul>
         </div>
     </nav>
-    <main>
-        <section class="base-screen">
-
+    <main class="full-width radial-background-color">
+        <section class="flex-row container">
+            <article class="typed-text">
+                <h1 class="main-type-write">My name is Sergiy Petruniv!</h1>
+            </article>
         </section>
 
 
-        <article class="center">
-
-            <p id="inside-link">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quibusdam
-                doloribus asperiores
-                necessitatibus eius accusantium tenetur rem possimus maiores blanditiis reprehenderit vero officia fuga
-                qui aut
-                quasi aliquid, perferendis corporis.</p>
-
-        </article>
-
-        <section class="base-screen">
-            <div></div>
-        </section>
     </main>
 
     <section id="login-popup" class="d-none">

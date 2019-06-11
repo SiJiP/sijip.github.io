@@ -26,6 +26,54 @@
         margin-top: 0;
     }
 }
+/*
+===========GENERAL STYLES=================
+*/
+/*background for all page, base container*/
+.full-width-background{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.fx-column{
+    flex: column;
+}
+
+.radial-background-color{
+    background-image: radial-gradient(at top left, #51545b, #242730);
+}
+
+.fx-item-align-center {
+    align-items: center;
+}
+
+.flex-row-sm{
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.fx-content-space-between{
+    justify-content: space-between;
+}
+.align-items-center{
+    align-items: center;
+}
+
+
+/*
+==========END GENERAL STYLES=============
+*/
+
 
 
 .main-info{
@@ -33,10 +81,35 @@
     display: flex;
     justify-content: center;
 }
+.main-type-write{
+    font-size: 5rem;
+    color: white;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    height: auto;
+}
+
+.caret-span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+    height: 5rem;
+  }
+
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  .author-photo{
+      max-width: 250px;
+      max-height: 350px;
+  }
+
+
 
 
 /**************************************
-        header
+==============HEADER================
 ****************************/
 
 .header-background {
@@ -51,9 +124,7 @@
     display: none;
 }
 
-.d-flex {
-    display: flex;
-}
+
 
 .d-flex-ul {
     display: flex;
@@ -74,9 +145,7 @@
     justify-content: space-between;
 }
 
-.header-container {
-    align-items: center;
-}
+
 
 #navbar-login-button {
     max-width: 150px;
@@ -348,9 +417,10 @@ login-popup
 
 
 .base-screen {
-    background-color: rgb(36, 39, 48);
+    
     /* background: #ffffff;*/
-    height: 1200px;
+    padding: 2rem;
+    min-height: 500px;
 }
 
 /******************
@@ -425,25 +495,35 @@ FINANCE PROJECT CSS
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
 
-    #navbar {
-        justify-content: center;
+    /*
+    ===========GENERAL STYLES Large==========
+    */
+    
+    .fx-order-1-lg {
+        order: 1;
+    }
+    
+    .fx-order-2-lg {
+        order: 2;
     }
 
     .d-flex-lg {
         display: flex;
     }
-
-    .container {
-        display: flex;
-        justify-self: center;
-        align-items: center;
+    
+    .justify-space-between-lg{
         justify-content: space-between;
+    }
+
+    .align-items-end-lg{
+        align-items: flex-end;
+    }
+    .container {
         max-width: 1120px;
         width: 100%;
     }
 
-    /*anti-hide bar in large screen*/
-    .hide-navbar {
+    .show-navbar-lg {
         display: flex;
         flex-direction: row;
     }
@@ -452,17 +532,14 @@ FINANCE PROJECT CSS
         display: none;
     }
 
-    #links {
-        order: 1;
-    }
+    /*
+    ===========END GENERAL STYLE===========
+    */
 
     #links li {
         display: inline-flex;
     }
 
-    .header-container {
-        order: 2;
-    }
     #chart-form{
         flex-direction: row;
         width: 100%;
@@ -470,12 +547,8 @@ FINANCE PROJECT CSS
     #chart-button{
         height: 40px;
     }
-    .align-items-end-lg{
-        align-items: flex-end;
-    }
-    .justify-space-between-lg{
-        justify-content: space-between;
-    }
+    
+    
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
