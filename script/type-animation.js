@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function (event) {
     //add data array for type
-    let dataText = ["Are you looking a developer?", "So, here I am.", "I love to develop", "My name is Sergiy Petruniv!"];
+    let dataText = ["Are you looking for developer?", "So, here I am.", "I love to develop!", "My name is Sergiy Petruniv!"];
     let txtArea = document.querySelector(".main-type-write");
 
     function typeWriter(txt, i, fnCallback) {

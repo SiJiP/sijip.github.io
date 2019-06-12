@@ -5,7 +5,9 @@
 }
 
 
-/*animation*/
+/*
+==============animation==============
+*/
 
 @keyframes slide-down {
     0% {
@@ -26,25 +28,31 @@
         margin-top: 0;
     }
 }
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
 /*
 ===========GENERAL STYLES=================
 */
 /*background for all page, base container*/
-.full-width-background{
+.full-width-background {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.full-width{
+.full-width {
     width: 100%;
 }
 
-.fx-column{
+.fx-column {
     flex: column;
 }
 
-.radial-background-color{
+.radial-background-color {
     background-image: radial-gradient(at top left, #51545b, #242730);
 }
 
@@ -52,7 +60,7 @@
     align-items: center;
 }
 
-.flex-row-sm{
+.flex-row-sm {
     display: flex;
     flex: row;
     justify-content: space-between;
@@ -62,11 +70,32 @@
     display: flex;
 }
 
-.fx-content-space-between{
+.fx-content-space-between {
     justify-content: space-between;
 }
-.align-items-center{
+
+.fx-justify-center{
+    justify-content: center;
+}
+
+.align-items-center {
     align-items: center;
+}
+
+.container {
+    width: 100%;
+}
+
+
+.d-none {
+    display: none;
+}
+
+.all-button {
+    border: 2px solid #83d0f2;
+    padding: 0.4rem 1.5rem;
+    cursor: pointer;
+    text-align: center;
 }
 
 
@@ -76,34 +105,10 @@
 
 
 
-.main-info{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.main-type-write{
-    font-size: 5rem;
-    color: white;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    height: auto;
-}
+/*
 
-.caret-span {
-    border-right: .05em solid;
-    animation: caret 1s steps(1) infinite;
-    height: 5rem;
-  }
 
-  @keyframes caret {
-    50% {
-      border-color: transparent;
-    }
-  }
-  .author-photo{
-      max-width: 250px;
-      max-height: 350px;
-  }
+
 
 
 
@@ -120,10 +125,6 @@
     overflow: hidden;
 }
 
-.hide-navbar {
-    display: none;
-}
-
 
 
 .d-flex-ul {
@@ -132,27 +133,13 @@
     justify-content: center;
 }
 
-.d-none {
-    display: none;
-
-}
-
-.container {
-    width: 100%;
-}
-
-.justify-space-between {
-    justify-content: space-between;
-}
-
-
-
 #navbar-login-button {
     max-width: 150px;
     flex-wrap: nowrap;
     margin: 0 0.5rem;
     font-size: 1rem;
     background: transparent;
+    color: #ffffff;
 }
 
 #navbar-login-button:hover {
@@ -160,21 +147,10 @@
     transition: background-color 0.5s
 }
 
-.all-button {
-    border: 2px solid #83d0f2;
-    padding: 0.4rem 1.5rem;
-    color: #ffffff;
-    cursor: pointer;
-    text-align: center;
-}
 
-
-
-
-
-/*************
-navbar links
-**************/
+/*
+============navbar links===========
+*/
 
 #links {
     animation: slide-down 2s;
@@ -217,11 +193,6 @@ li {
 
 
 #links li:hover::after {
-    content: "";
-    background-color: #83d0f2;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
     transform: translateX(0);
     transition: transform 0.6s;
 }
@@ -231,9 +202,9 @@ li {
 
 
 
-/**************
-hamburger
-*************/
+/*
+========hamburger===========
+*/
 
 #burger {
     padding: 14px 16px;
@@ -265,9 +236,9 @@ hamburger
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
-/*********************
-login-popup
-**********************/
+/*
+============login-popup===========
+*/
 
 
 
@@ -416,16 +387,50 @@ login-popup
 }
 
 
-.base-screen {
-    
-    /* background: #ffffff;*/
-    padding: 2rem;
+
+/*
+===========Main info===========
+*/
+#first-background{
+    background-image:url(../images/road-trip.jpg);
     min-height: 500px;
+    background-position: center;
+    filter: blur()
 }
 
-/******************
-FINANCE PROJECT CSS
-*******************/
+
+/*
+===============typewrite =============
+*/
+.main-type-write {
+    font-size: 3rem;
+    color: white;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    height: auto;
+    text-align: left;
+}
+.typed-text{
+    max-width: 320px;
+    height: 100%;
+    position: relative;
+    padding: 0 2rem;
+}
+.typed-text>h1{
+    margin-top: 150px;
+}
+
+.caret-span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+    height: 3rem;
+}
+
+
+
+/*
+===========FINANCE PROJECT CSS=============
+*/
 
 [type="date"] {
     background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
@@ -449,32 +454,34 @@ FINANCE PROJECT CSS
 }
 
 
-#chart-form{
+#chart-form {
     display: flex;
     padding: 1rem;
     flex-direction: column;
-   
+
 }
 
-.input-chart-row{
+.input-chart-row {
     display: flex;
     flex-direction: column;
     justify-items: center;
     margin: 0.8rem;
 }
 
-.input-chart-row > label{
+.input-chart-row>label {
     font-size: 1.2rem;
     margin: 0.2rem 0;
 
 }
-#chart-button{
+
+#chart-button {
     margin: 0.7rem;
     background-color: transparent;
     color: black;
     font-size: 1.2rem;
 }
-#chart-button:hover{
+
+#chart-button:hover {
     background-color: #83d0f2;
     transition: background-color 1s;
 }
@@ -487,22 +494,57 @@ FINANCE PROJECT CSS
 
 
 /* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+
+}
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .main-type-write {
+        font-size: 4rem;
+    }
+    .typed-text{
+        max-width: 400px;
+    }
+    .typed-text>h1{
+        margin-top: 150px;
+    }
+    
+    .caret-span {
+        height: 4rem;
+    }
+}
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
+    .main-type-write {
+        font-size: 5rem;
+    }
+    .typed-text{
+        max-width: 500px;
+        margin-left: 2rem;
+    }
+    .typed-text>h1{
+        margin-top: 150px;
+    }
+    
+    .caret-span {
+        height: 5rem;
+    }
+    #first-background{
+        min-height: 600px;
+    }
+
+
 
     /*
     ===========GENERAL STYLES Large==========
     */
-    
+
     .fx-order-1-lg {
         order: 1;
     }
-    
+
     .fx-order-2-lg {
         order: 2;
     }
@@ -510,17 +552,17 @@ FINANCE PROJECT CSS
     .d-flex-lg {
         display: flex;
     }
-    
-    .justify-space-between-lg{
+
+    .justify-space-between-lg {
         justify-content: space-between;
     }
 
-    .align-items-end-lg{
+    .align-items-end-lg {
         align-items: flex-end;
     }
+
     .container {
         max-width: 1120px;
-        width: 100%;
     }
 
     .show-navbar-lg {
@@ -540,18 +582,21 @@ FINANCE PROJECT CSS
         display: inline-flex;
     }
 
-    #chart-form{
+    #chart-form {
         flex-direction: row;
         width: 100%;
     }
-    #chart-button{
+
+    #chart-button {
         height: 40px;
     }
-    
-    
+
+
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-    ...
+    #first-background{
+        background-size: 100%;
+    }
 }
