@@ -26,17 +26,52 @@
             <ul id="links" class="d-none show-navbar-lg fx-order-1-lg ">
                 <li><a href="../index.html">Main</a></li>
                 <li><a href="about_me.html">About me</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contacts.html">Contacts</a></li>
                 <li><a href="https://bukoveltransfer.com.ua">First web-site</a></li>
                 <li><a href="project.html">Project</a></li>
-                <li><a href="../invisible_password.html">Invisible Password</a></li>
+                <li><a href="invisible_password.html">Invisible Password</a></li>
             </ul>
         </div>
     </nav>
     <h1>My blog</h1>
     <span><a href="../index.html">Go to back</a></span>
 
+    <section id="login-popup" class="d-none">
+        <div class="header-popup">
+            <h2>Login Form</h2>
+            <div class="x">
+                <div class="x1"></div>
+                <div class="x2"></div>
+            </div>
+        </div>
+        <div class="main-popup">
+            <form action="#" method="POST" id="login-form" autocomplete="off">
+                <fieldset>
+                    <input type="text" name="login" id="name" class="input-form" required>
+                    <label for="login">Login: </label>
+                    <div class="after-input"></div>
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="mail" id="mail" class="input-form" required>
+                    <label for="email">E-mail: </label>
+                    <div class="after-input"></div>
+                </fieldset>
+                <fieldset>
+                    <input type="password" name="pass" id="pass" class="input-form" required>
+                    <label for="pass">Password: </label>
+                    <div class="after-input"></div>
+                </fieldset>
+                <button class="popup-button">Submit</button>
+            </form>
+
+        </div>
+    </section>
+    <footer class="footer d-flex fx-justify-center">
+        <div class="copyright d-flex align-items-center"><span>© Sergiy <b>Petruniv</b><br>
+                petruniv.s.i@gmail.com <br>
+                GitHub: <a href="https://github.com/SiJiP">SiJiP</a>
+            </span></div>
+    </footer>
     <script src="../script/script.js"></script>
 </body>
 

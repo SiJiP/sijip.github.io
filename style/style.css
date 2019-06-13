@@ -52,7 +52,7 @@
     flex-direction: column;
 }
 
-.radial-background-color {
+.background-color {
     background-color: #1b1b1c;
 }
 
@@ -508,9 +508,32 @@ li {
  
 }
 
+/*
+===========EMBED VIDEO=========
+*/
+.embed-video{
+    width: 100%;
+    height: 300px;
+    margin: 1.5rem 0;
+}
 
 
+/*
+===========FOOTER=============
+*/
 
+.footer{
+    min-height: 75px;
+    background-color: #070707;
+    color: #fff;
+    padding: 1rem;
+}
+.copyright {
+    text-align: center;
+}
+.copyright a {
+    color: aliceblue;
+}
 /*
 ===========FINANCE PROJECT CSS=============
 */
@@ -596,6 +619,9 @@ li {
     .caret-span {
         height: 4rem;
     }
+    .embed-video{
+        height: 400px;
+    }
 }
 
 /* Large devices (desktops, 992px and up)*/
@@ -619,6 +645,9 @@ li {
     }
     .fx-row-lg{
         flex-direction: row;
+    }
+    .embed-video{
+        height: 550px;
     }
 
 
@@ -693,5 +722,8 @@ li {
 @media (min-width: 1200px) {
     #first-background{
         background-size: 100%;
+    }
+    .embed-video{
+        height: 650px;
     }
 }
