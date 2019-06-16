@@ -28,6 +28,7 @@
         margin-top: 0;
     }
 }
+
 @keyframes caret {
     50% {
         border-color: transparent;
@@ -69,7 +70,8 @@
 .d-flex {
     display: flex;
 }
-.flex-center{
+
+.flex-center {
     display: flex;
     justify-content: center;
 }
@@ -78,7 +80,7 @@
     justify-content: space-between;
 }
 
-.fx-justify-center{
+.fx-justify-center {
     justify-content: center;
 }
 
@@ -395,8 +397,8 @@ li {
 /*
 ===========Main info===========
 */
-#first-background{
-    background-image:url(../images/road-trip.jpg);
+#first-background {
+    background-image: url(../images/road-trip.jpg);
     min-height: 500px;
     background-position: center;
     filter: blur()
@@ -414,12 +416,14 @@ li {
     height: auto;
     text-align: left;
 }
-.typed-text{
+
+.typed-text {
     max-width: 320px;
     position: relative;
     padding: 0 2rem;
 }
-.typed-text>h1{
+
+.typed-text>h1 {
     margin-top: 150px;
 }
 
@@ -433,7 +437,7 @@ li {
 /*
 =============HTML5==============
 */
-.box-stack{
+.box-stack {
     max-width: 300px;
     display: flex;
     flex-direction: column;
@@ -441,26 +445,28 @@ li {
 }
 
 
-.html5-block>h2{
+.html5-block>h2 {
     font-size: 2.5rem;
-    margin: 3rem 0; 
+    margin: 3rem 0;
     padding: 1rem 1rem;
     color: #fff;
     font-weight: 500;
     position: relative;
     text-align: center;
 }
-.html5-block>h2::after{
+
+.html5-block>h2::after {
     content: '';
     position: absolute;
     width: 180px;
     background-color: #fff;
     height: 3px;
     left: 50%;
-    margin-left: -90px; 
+    margin-left: -90px;
     bottom: 8px;
 }
-.article-text h3::after{
+
+.article-text h3::after {
     content: '';
     position: absolute;
     width: 65px;
@@ -468,10 +474,10 @@ li {
     height: 3px;
     left: 16px;
     bottom: 10px;
-    
+
 }
 
-.article-text>h3{
+.article-text>h3 {
     font-size: 1.5rem;
     padding: 1rem;
     position: relative;
@@ -479,43 +485,47 @@ li {
     margin: 0.5rem 0;
     font-weight: 500;
 }
-.article-text>p{
+
+.article-text>p {
     font-size: 1.2rem;
-    padding: 0 1rem ;
+    padding: 0 1rem;
     color: #ededed;
     font-weight: 300;
 }
-.article-image{
+
+.article-image {
     padding: 1rem;
     margin: 2rem 0;
 }
 
-[src*=".png"]{
+[src*=".png"] {
     max-width: 300px;
 }
-.badge-lang{
+
+.badge-lang {
     margin: 3rem 0;
     padding: 1rem 0;
 }
-.box-image{
+
+.box-image {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
 }
 
-.box-image img{
+.box-image img {
     width: 250px;
- 
+
 }
 
 /*
 ===========EMBED VIDEO=========
 */
-.embed-video{
+.embed-video {
     width: 100%;
     height: 300px;
     margin: 1.5rem 0 5rem 0;
-    
+
 }
 
 
@@ -523,18 +533,21 @@ li {
 ===========FOOTER=============
 */
 
-.footer{
+.footer {
     min-height: 75px;
     background-color: #070707;
     color: #fff;
     padding: 1rem;
 }
+
 .copyright {
     text-align: center;
 }
+
 .copyright a {
     color: aliceblue;
 }
+
 /*
 ===========FINANCE PROJECT CSS=============
 */
@@ -600,28 +613,136 @@ li {
 
 
 
-/* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
-
+/*
+============HOBBIES=============
+*/
+.gallery-container {
+    max-width: 1120px;
+    position: relative;
 }
+
+.gallery-slides {
+    display: none;
+}
+
+.gallery-slides img {
+    width: 100%;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.6s easy;
+    border-radius: 0 3px 3px 0px;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-text {
+    color: #f2f2f2;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: absolute;
+    bottom: 1.6rem;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
+
+/*
+============END HOBBIES============
+*/
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
     .main-type-write {
         font-size: 4rem;
     }
-    .typed-text{
+
+    .typed-text {
         max-width: 400px;
     }
-    .typed-text>h1{
+
+    .typed-text>h1 {
         margin-top: 150px;
     }
-    
+
     .caret-span {
         height: 4rem;
     }
-    .embed-video{
+
+    .embed-video {
         height: 400px;
+    }
+
+    .gallery-text {
+        font-size: 2rem;
+
     }
 }
 
@@ -630,24 +751,29 @@ li {
     .main-type-write {
         font-size: 5rem;
     }
-    .typed-text{
+
+    .typed-text {
         max-width: 500px;
         margin-left: 2rem;
     }
-    .typed-text>h1{
+
+    .typed-text>h1 {
         margin-top: 150px;
     }
-    
+
     .caret-span {
         height: 5rem;
     }
-    #first-background{
+
+    #first-background {
         min-height: 600px;
     }
-    .fx-row-lg{
+
+    .fx-row-lg {
         flex-direction: row;
     }
-    .embed-video{
+
+    .embed-video {
         height: 550px;
     }
 
@@ -690,7 +816,7 @@ li {
         display: none;
     }
 
-    .fx-6-lg{
+    .fx-6-lg {
         width: 50%;
     }
 
@@ -710,10 +836,12 @@ li {
     #chart-button {
         height: 40px;
     }
-    .article-text>p{
+
+    .article-text>p {
         max-width: 500px;
     }
-    .box-stack{
+
+    .box-stack {
         align-self: initial;
     }
 
@@ -721,10 +849,15 @@ li {
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-    #first-background{
+    #first-background {
         background-size: 100%;
     }
-    .embed-video{
+
+    .embed-video {
         height: 650px;
+    }
+
+    .gallery-text {
+        font-size: 3rem;
     }
 }
