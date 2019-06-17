@@ -624,6 +624,9 @@ li {
 .gallery-slides {
     display: none;
 }
+.gallery-show{
+    display:flex;
+}
 
 .gallery-slides img {
     width: 100%;
@@ -635,14 +638,15 @@ li {
     position: absolute;
     top: 50%;
     width: auto;
-    margin-top: -22px;
-    padding: 16px;
+    margin-top: -24px;
+    padding: 10px;
     color: #fff;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 2rem;
     transition: 0.6s easy;
     border-radius: 0 3px 3px 0px;
     user-select: none;
+    opacity: 0.3;
 }
 
 .next {
@@ -652,7 +656,8 @@ li {
 
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .gallery-text {
@@ -665,7 +670,9 @@ li {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5)
 }
-
+.dots{
+   text-align: center; 
+}
 .dot {
     cursor: pointer;
     height: 15px;
