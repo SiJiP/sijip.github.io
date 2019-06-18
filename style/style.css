@@ -624,8 +624,13 @@ li {
 .gallery-slides {
     display: none;
 }
+
 .gallery-show{
     display:flex;
+}
+
+.gallery-show img{
+    width: 100%;
 }
 
 .gallery-slides img {
@@ -738,6 +743,7 @@ li {
     cursor: pointer;
     padding: 0.9rem 1rem;
     transition: 0.4s;
+    color: #5b5b5b;
   }
   
   /* Change background color of buttons on hover */
