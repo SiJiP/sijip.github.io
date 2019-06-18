@@ -629,15 +629,13 @@ li {
     display:flex;
 }
 
-.gallery-show img{
-    width: 100%;
-    height: auto;
-}
-
+.gallery-show img,
 .gallery-slides img {
     width: 100%;
     height: auto;
+    align-self: center;
 }
+
 
 .prev,
 .next {
