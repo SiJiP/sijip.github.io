@@ -626,14 +626,13 @@ li {
 }
 
 .gallery-show{
-    display:flex;
+    display:block;
 }
 
 .gallery-show img,
 .gallery-slides img {
     width: 100%;
     height: auto;
-    align-self: center;
 }
 
 
