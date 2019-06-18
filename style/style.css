@@ -631,10 +631,12 @@ li {
 
 .gallery-show img{
     width: 100%;
+    height: auto;
 }
 
 .gallery-slides img {
     width: 100%;
+    height: auto;
 }
 
 .prev,
