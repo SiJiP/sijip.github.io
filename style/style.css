@@ -103,7 +103,9 @@
     cursor: pointer;
     text-align: center;
 }
-
+.align-self-center{
+    align-self: center;
+}
 
 /*
 ==========END GENERAL STYLES=============
@@ -571,6 +573,7 @@ li {
     padding: 3px 5px;
     box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
     font-size: 1.5rem;
+    width: 100%;
 }
 
 
@@ -799,6 +802,22 @@ li {
 ============END HOBBIES============
 */
 
+/*
+=========CONTACTS============
+*/
+.contact-butt{
+    background-color: transparent;
+    color: white;
+}
+.contact-butt:hover{
+    background-color: #83d0f2;
+    transition: background-color .5s;
+}
+
+
+/*
+===========END CONTACTS=============
+*/
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {}
 
@@ -881,6 +900,10 @@ li {
 
     .justify-space-between-lg {
         justify-content: space-between;
+    }
+
+    .justify-space-around-lg{
+        justify-content: space-around;
     }
 
     .align-items-end-lg {

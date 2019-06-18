@@ -80,7 +80,7 @@
   activeClass();
 
 
-  function activeClass(){
+  function activeClass() {
     tabcontent[0].style.display = "block";
     tablinks[0].className += " active";
   }
@@ -107,4 +107,18 @@
   })
 
 
+
+  //my simple map
+
+  var map;
+
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 48.932689,
+        lng: 24.745549
+      },
+      zoom: 15,
+    });
+  }
 })();
