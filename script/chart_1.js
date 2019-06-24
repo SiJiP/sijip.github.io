@@ -144,6 +144,8 @@ let yyyy = today.getFullYear();
 
 today = yyyy+'-'+mm+'-'+dd;
 document.getElementById("end-date").setAttribute("max", today);
+document.getElementById("start-date").setAttribute("max", today);
+
 
 
  
