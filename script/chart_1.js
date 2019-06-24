@@ -23,7 +23,6 @@ submitButton.addEventListener('click', function (event) {
     for (let i = 0; i <= countDay; i++) {
         let dayRequst = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate() + i)
         dateToString(dayRequst);
-        console.log(dateToString(dayRequst));
 
         $.getJSON(
             "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=" + currencyValue + "&date=" + dateToString(dayRequst) + "&json",
@@ -100,12 +99,7 @@ submitButton.addEventListener('click', function (event) {
                 
                 
             });
-
     }
-
-
-
-    console.log(finalArray);
 })
 
 /*convert date to correct request string */
