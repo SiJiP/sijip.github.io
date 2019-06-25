@@ -13,11 +13,11 @@ submitButton.addEventListener('click', function (event) {
     let countDay = miliToCountDate(calcRangeDate(startDate, endDate));
     let startDateSplit = startDate.value.split('-'); // ["dd", "mm", "yyyy"]
     let newDate = new Date(startDateSplit[0], startDateSplit[1] - 1, startDateSplit[2]); // Tue Jun 25 2019 12:48:44 GMT+0300 (Eastern European Summer Time)
-    let iteration = 0;
+    let iteration = 1;
     timeoutCycle();
 
     function timeoutCycle() {
-        if (iteration < countDay) {
+        if (iteration <= countDay ) {
             let dayRequest = new Date(newDate.getFullYear(),
                 newDate.getMonth(), newDate.getDate() + iteration)
             dateToString(dayRequest);
