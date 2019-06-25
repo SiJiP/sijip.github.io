@@ -1,7 +1,7 @@
 let submitButton = document.getElementById('chart-button');
 let currency = document.getElementById('currency');
-let startDate = document.getElementById('start-date');
-let endDate = document.getElementById('end-date');
+let startDate = document.getElementById('start-date');     // "dd-mm-yyyy"
+let endDate = document.getElementById('end-date');         // "dd-mm-yyyy"
 let finalData = [];
 
 
@@ -11,8 +11,8 @@ submitButton.addEventListener('click', function (event) {
     finalData = [];
     let currencyValue = currency.value.toUpperCase();
     let countDay = miliToCountDate(calcRangeDate(startDate, endDate));
-    let startDateSplit = startDate.value.split('-');
-    let newDate = new Date(startDateSplit[0], startDateSplit[1], startDateSplit[2]);
+    let startDateSplit = startDate.value.split('-'); // ["dd", "mm", "yyyy"]
+    let newDate = new Date(startDateSplit[0], startDateSplit[1] - 1, startDateSplit[2]); // Tue Jun 25 2019 12:48:44 GMT+0300 (Eastern European Summer Time)
     let iteration = 0;
     timeoutCycle();
 
@@ -38,9 +38,9 @@ submitButton.addEventListener('click', function (event) {
                         temporaryArr.push(data[0].rate);
                         finalData.push(temporaryArr);
                         iteration++;
-                        setTimeout(timeoutCycle, 2);
+                        setTimeout(timeoutCycle, 3);
                     } else {                                  // else make request again without iteration++
-                        setTimeout(timeoutCycle, 2);
+                        setTimeout(timeoutCycle, 3);
                     }
                 }
             });
@@ -117,8 +117,8 @@ submitButton.addEventListener('click', function (event) {
 function dateToString(date) {
     let dateStr = '';
     dateStr += date.getFullYear();
-    (date.getMonth() < 10) ? dateStr += "0" + date.getMonth(): dateStr += date.getMonth();
-    (date.getDate() < 10) ? dateStr += "0" + date.getDate(): dateStr += date.getDate();
+    (date.getMonth() < 10) ? dateStr += "0" + (date.getMonth() + 1) : dateStr += date.getMonth() + 1;
+    (date.getDate() < 10) ? dateStr += "0" + date.getDate() : dateStr += date.getDate();
     return dateStr;
 }
 
