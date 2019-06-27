@@ -3,12 +3,27 @@ let currency = document.getElementById('currency');
 let startDate = document.getElementById('start-date');     // "dd-mm-yyyy"
 let endDate = document.getElementById('end-date');         // "dd-mm-yyyy"
 let finalData = [];
+let containerForChart = document.querySelector('.container-for-chart');
 
 
+function appendChart(){
+    if(document.querySelector('#container-chart')){
+        document.querySelector('#container-chart').remove();
+    }
+
+    let chartContainer = document.createElement('div');
+    chartContainer.setAttribute('id', 'container-chart');
+    containerForChart.appendChild(chartContainer);
+    let loader = document.createElement('div');
+    loader.className = "loader";
+    chartContainer.appendChild(loader);
+
+}
 
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
     finalData = [];
+    appendChart();
     let currencyValue = currency.value.toUpperCase();
     let countDay = miliToCountDate(calcRangeDate(startDate, endDate));
     let startDateSplit = startDate.value.split('-'); // ["dd", "mm", "yyyy"]
