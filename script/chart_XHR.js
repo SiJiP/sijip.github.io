@@ -46,7 +46,11 @@ submitButton.addEventListener('click', function () {
                         let data = JSON.parse(XHR.responseText);
                         let temporaryArr = [];
                         if (data[0] != undefined) { // check if data exist
-                            temporaryArr.push(data[0].exchangedate); 
+                            let dateArr = data[0].exchangedate.split('.');
+                            let correctDate = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]);
+
+
+                            temporaryArr.push(correctDate.getTime() + 86400000);    //HighChart accepts date in milliseconds
                             temporaryArr.push(data[0].rate);
                             finalData.push(temporaryArr);
                             iteration++;
