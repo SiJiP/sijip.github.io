@@ -22,7 +22,7 @@ submitButton.addEventListener('click', function () {
     appendChart();
     finalData = [];
     let countDay = miliToCountDate(calcRangeDate(startDate, endDate));
-    let startDateSplit = startDate.value.split('-'); // ["dd", "mm", "yyyy"]                                
+    let startDateSplit = startDate.value.split('-');                                     // ["dd", "mm", "yyyy"]                                
     let newDate = new Date(startDateSplit[0], startDateSplit[1] - 1, startDateSplit[2]); /* newDate need for add date +1 day every iteration*/
     iteration = 0;
     timeoutCycle();
@@ -46,11 +46,7 @@ submitButton.addEventListener('click', function () {
                         let data = JSON.parse(XHR.responseText);
                         let temporaryArr = [];
                         if (data[0] != undefined) { // check if data exist
-                            let dateArr = data[0].exchangedate.split('.');
-                            let correctDate = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]);
-
-
-                            temporaryArr.push(correctDate.getTime() + 86400000);    //HighChart accepts date in milliseconds
+                            temporaryArr.push(data[0].exchangedate); 
                             temporaryArr.push(data[0].rate);
                             finalData.push(temporaryArr);
                             iteration++;
@@ -71,7 +67,7 @@ submitButton.addEventListener('click', function () {
             finalData.sort(function (a, b) { // sort all data in the end
                 return (a[0] - b[0]);
             });
-            createChart();
+            createChart();                   // call function what create chart after sort
 
         }
     }
