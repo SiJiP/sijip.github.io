@@ -12,12 +12,12 @@ function appendChart(){
     }
 
     let chartContainer = document.createElement('div');
+    let loader = document.createElement('div');
+
     chartContainer.setAttribute('id', 'container-chart');
     containerForChart.appendChild(chartContainer);
-    let loader = document.createElement('div');
     loader.className = "loader";
     chartContainer.appendChild(loader);
-
 }
 
 submitButton.addEventListener('click', function (event) {

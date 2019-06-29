@@ -3,35 +3,7 @@
     padding: 0;
     font-family: 'EB Garamond', serif;
 }
-/*loader*/
-.container-for-chart{
-    min-width: 310px;
-    height: 400px;
-}
-#container-chart{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 310px;
-    min-height: 400px;
-}
-.loader {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 16px solid #00e0ae;
-    border-top: 16px solid #5b408c;
-    animation: spin 1s infinite;
-    display: flex;
-}
-@keyframes spin {
-  0% { 
-    transform: rotate(0deg); 
-  }
-  100% { 
-    transform: rotate(360deg); 
-  }
-}
+
 
 /*
 ==============animation==============
@@ -635,6 +607,42 @@ li {
 #chart-button:hover {
     background-color: #83d0f2;
     transition: background-color 1s;
+}
+/*loader*/
+.container-for-chart{
+    min-width: 310px;
+    height: 400px;
+}
+#container-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 310px;
+    min-height: 400px;
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 16px solid #00e0ae;
+    border-top: 16px solid #5b408c;
+    animation: spin 1s infinite;
+    display: flex;
+}
+.error-massage{
+    display: flex;
+    color: darkslategrey;
+    font-size: 2rem;
+    max-width: 320px;
+    text-align: center;
+}
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
 }
 
 /********************
