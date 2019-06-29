@@ -3,7 +3,6 @@ let currency = document.getElementById('currency');
 let startDate = document.getElementById('start-date'); // "dd-mm-yyyy"
 let endDate = document.getElementById('end-date'); // "dd-mm-yyyy"
 let finalData = [];
-let curVal = currency.value;
 let iteration = 0;
 let containerForChart = document.querySelector('.container-for-chart');
 const BASE_URL = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode="
@@ -21,6 +20,7 @@ startDate.addEventListener('change', function(){
 submitButton.addEventListener('click', function () {
     appendChart();
     finalData = [];
+    let curVal = currency.value;
     let countDay = miliToCountDate(calcRangeDate(startDate, endDate));
     let startDateSplit = startDate.value.split('-');                                     // ["dd", "mm", "yyyy"]                                
     let newDate = new Date(startDateSplit[0], startDateSplit[1] - 1, startDateSplit[2]); /* newDate need for add date +1 day every iteration*/
