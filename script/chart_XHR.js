@@ -50,7 +50,7 @@ submitButton.addEventListener('click', function () {
                             let correctDate = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]);
 
 
-                            temporaryArr.push(correctDate.getTime() + 86400000);    //HighChart accepts date in milliseconds
+                            temporaryArr.push(correctDate.getTime() + 10800000);    //HighChart accepts date in milliseconds
                             temporaryArr.push(data[0].rate);
                             finalData.push(temporaryArr);
                             iteration++;
