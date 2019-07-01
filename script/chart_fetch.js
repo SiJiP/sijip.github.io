@@ -12,14 +12,19 @@ const BASE_URL = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?v
 
 
 submitButton.addEventListener('click', function () {
-    appendChart();
-    finalData = [];
-    curVal = currency.value;
-    countDay = miliToCountDate(calcRangeDate(startDate, endDate));
-    let startDateSplit = startDate.value.split('-'); // ["dd", "mm", "yyyy"]                                
-    newDate = new Date(startDateSplit[0], startDateSplit[1] - 1, startDateSplit[2]); /* newDate need for add date +1 day every iteration*/
-    iteration = 0;
-    timeoutCycle();
+
+    if (!checkEmptyDate(startDate) || !checkEmptyDate(endDate)) {
+        viewMessage('class', 'error-message', 'Ops...Date field is empty. Please, enter the date!')
+    } else {
+        viewMessage('class', 'loader');
+        finalData = [];
+        curVal = currency.value;
+        countDay = miliToCountDate(calcRangeDate(startDate, endDate));
+        let startDateSplit = startDate.value.split('-'); // ["dd", "mm", "yyyy"]                                
+        newDate = new Date(startDateSplit[0], startDateSplit[1] - 1, startDateSplit[2]); /* newDate need for add date +1 day every iteration*/
+        iteration = 0;
+        timeoutCycle();
+    }
 })
 
 function timeoutCycle() {
@@ -49,7 +54,7 @@ function fetchRequest(URI) {
                 finalData.push(temporaryArr);
                 iteration++;
                 setTimeout(timeoutCycle, 3);
-            } 
+            }
         })
         .then(function () {
             if (iteration > countDay) {
@@ -59,13 +64,9 @@ function fetchRequest(URI) {
                 createChart();
             }
         })
-        .catch(function(){
-            document.querySelector('.loader').remove();
-            let error = new Error('Something went wrong! Please try again...');
-            let err = document.createElement('div');
-            err.className = 'error-massage';
-            err.innerText = error.message;
-            document.querySelector('#container-chart').appendChild(err);
+        .catch(function () {
+            viewMessage('class', 'error-message', 'Something went wrong! Please try again...');
+            let error = new Error('data[0] undefined');
             throw error;
         })
 }
@@ -81,9 +82,16 @@ function checkStatus(responce) {
     }
 }
 
+function checkEmptyDate(el) {
+    let result = (el.value == "") ? false : true
+    return result;
+}
+
 function parseJSON(responce) {
     return responce.json();
 }
+
+
 
 
 /* Create chart board */
@@ -171,19 +179,23 @@ function dateToString(date) {
     return dateStr;
 }
 
-/*add chart or loader to page */
-function appendChart() {
+
+
+function viewMessage(selector, name_selector, message) {
     if (document.querySelector('#container-chart')) {
         document.querySelector('#container-chart').remove();
     }
+    let container = document.createElement('div');
+    container.setAttribute('id', "container-chart");
 
-    let chartContainer = document.createElement('div');
-    let loader = document.createElement('div');
 
-    chartContainer.setAttribute('id', 'container-chart');
-    containerForChart.appendChild(chartContainer);
-    loader.className = "loader";
-    chartContainer.appendChild(loader);
+    let el = document.createElement('div');
+    containerForChart.appendChild(container);
+    el.setAttribute(selector, name_selector);
+    if (message) {
+        el.innerText = message
+    }
+    container.appendChild(el)
 }
 
 function definesToday() {

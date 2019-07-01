@@ -629,7 +629,7 @@ li {
     animation: spin 1s infinite;
     display: flex;
 }
-.error-massage{
+.error-message{
     display: flex;
     color: darkslategrey;
     font-size: 2rem;
@@ -925,14 +925,14 @@ li {
         height: 550px;
     }
     .container-for-chart{
-        min-height: 700px;
+        min-height: 600px;
     }
     #container-chart{
         display: flex;
         justify-content: center;
         align-items: center;
         min-width: 310px;
-        min-height: 700px;
+        min-height: 600px;
     }
 
 
