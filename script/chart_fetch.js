@@ -4,78 +4,87 @@ let startDate = document.getElementById('start-date'); // "dd-mm-yyyy"
 let endDate = document.getElementById('end-date'); // "dd-mm-yyyy"
 let finalData = [];
 let iteration = 0;
+let countDay = 0;
+let newDate, curVal;
 let containerForChart = document.querySelector('.container-for-chart');
 const BASE_URL = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode="
 
 
 
-
-endDate.addEventListener('change', function () {
-    startDate.setAttribute("max", endDate.value)
-});
-startDate.addEventListener('change', function(){
-    endDate.setAttribute('min', startDate.value )
-});
-
 submitButton.addEventListener('click', function () {
     appendChart();
     finalData = [];
-    let curVal = currency.value;
-    let countDay = miliToCountDate(calcRangeDate(startDate, endDate));
-    let startDateSplit = startDate.value.split('-');                                     // ["dd", "mm", "yyyy"]                                
-    let newDate = new Date(startDateSplit[0], startDateSplit[1] - 1, startDateSplit[2]); /* newDate need for add date +1 day every iteration*/
+    curVal = currency.value;
+    countDay = miliToCountDate(calcRangeDate(startDate, endDate));
+    let startDateSplit = startDate.value.split('-'); // ["dd", "mm", "yyyy"]                                
+    newDate = new Date(startDateSplit[0], startDateSplit[1] - 1, startDateSplit[2]); /* newDate need for add date +1 day every iteration*/
     iteration = 0;
     timeoutCycle();
+})
 
-
-    function timeoutCycle() {
-        if (iteration <= countDay) {
-            let dayRequest = new Date(newDate.getFullYear(),
-                newDate.getMonth(), newDate.getDate() + iteration);
-            let stringDate = dateToString(dayRequest);
-            let _URI = `${BASE_URL}${curVal}&date=${stringDate}&json`;
-            XHRrequest(_URI);
-
-            function XHRrequest(URI) {
-                let XHR = new XMLHttpRequest();
-                XHR.open("GET", URI);
-                XHR.send();
-
-                XHR.addEventListener("readystatechange", function () {
-                    if ((XHR.readyState === 4) && (XHR.status === 200)) {
-                        let data = JSON.parse(XHR.responseText);
-                        let temporaryArr = [];
-                        if (data[0] != undefined) { // check if data exist
-                            let dateArr = data[0].exchangedate.split('.');
-                            let correctDate = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]);
-
-
-                            temporaryArr.push(correctDate.getTime() + 10800000);    //HighChart accepts date in milliseconds
-                            temporaryArr.push(data[0].rate);
-                            finalData.push(temporaryArr);
-                            iteration++;
-                            setTimeout(timeoutCycle, 3);
-                        } else {                                                    // show error massage
-                            document.querySelector('.loader').remove();
-                            let error = new Error('Something went wrong! Please try again...');
-                            let err = document.createElement('div');
-                            err.className = 'error-massage';
-                            err.innerText = error.message;
-                            document.querySelector('#container-chart').appendChild(err);
-                            console.log(error);
-                        }
-                    }
-                }, false);
-            }
-        } else {
-            finalData.sort(function (a, b) { // sort all data in the end
-                return (a[0] - b[0]);
-            });
-            createChart();                   // call function what create chart after sort
-
-        }
+function timeoutCycle() {
+    if (iteration <= countDay) {
+        let dayRequest = new Date(newDate.getFullYear(),
+            newDate.getMonth(), newDate.getDate() + iteration);
+        let stringDate = dateToString(dayRequest);
+        let _URI = `${BASE_URL}${curVal}&date=${stringDate}&json`;
+        fetchRequest(_URI);
     }
-});
+}
+
+function fetchRequest(URI) {
+    fetch(URI, {
+            method: "GET",
+        })
+        .then(checkStatus)
+        .then(parseJSON)
+        .then(function (data) {
+            let temporaryArr = [];
+            if (data[0] != undefined) { // check if data exist
+                let dateArr = data[0].exchangedate.split('.');
+                let correctDate = new Date(dateArr[2], dateArr[1] - 1, dateArr[0]);
+
+                temporaryArr.push(correctDate.getTime() + 10800000); //HighChart accepts date in milliseconds
+                temporaryArr.push(data[0].rate);
+                finalData.push(temporaryArr);
+                iteration++;
+                setTimeout(timeoutCycle, 3);
+            } 
+        })
+        .then(function () {
+            if (iteration > countDay) {
+                finalData.sort(function (a, b) { // sort all data in the end
+                    return (a[0] - b[0]);
+                });
+                createChart();
+            }
+        })
+        .catch(function(){
+            document.querySelector('.loader').remove();
+            let error = new Error('Something went wrong! Please try again...');
+            let err = document.createElement('div');
+            err.className = 'error-massage';
+            err.innerText = error.message;
+            document.querySelector('#container-chart').appendChild(err);
+            throw error;
+        })
+}
+
+
+function checkStatus(responce) {
+    if (responce.status >= 200 && responce.status < 300) {
+        return responce
+    } else {
+        let error = new Error(responce.statusText)
+        error.responce = responce;
+        throw error
+    }
+}
+
+function parseJSON(responce) {
+    return responce.json();
+}
+
 
 /* Create chart board */
 function createChart() {
@@ -193,6 +202,12 @@ function definesToday() {
     return today;
 }
 
+endDate.addEventListener('change', function () {
+    startDate.setAttribute("max", endDate.value)
+});
+startDate.addEventListener('change', function () {
+    endDate.setAttribute('min', startDate.value)
+});
 
 document.getElementById("end-date").setAttribute("max", definesToday());
 document.getElementById("start-date").setAttribute("max", definesToday());
