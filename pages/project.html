@@ -2,19 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Project</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-
-
 </head>
 
 <body>
@@ -45,12 +43,12 @@
             <form action="" method="get" id="chart-form" class="justify-space-around-lg align-items-end-lg">
                 <div class="input-chart-row">
                     <label for="start">From:</label>
-                    <input type="date" class="chart-input" id="start-date" name="start">
+                    <input type="date" class="chart-input" id="start-date" name="start" />
                 </div>
 
                 <div class="input-chart-row">
                     <label for="end">To:</label>
-                    <input type="date" class="chart-input" id="end-date" name="end">
+                    <input type="date" class="chart-input" id="end-date" name="end" />
                 </div>
 
                 <div class="input-chart-row">
@@ -70,14 +68,14 @@
                         <option value="xpd">Paladium</option>
                     </select>
                 </div>
-                <button type="button" class="all-button" id="chart-button"> Submit </button>
+                <button type="button" class="all-button" id="chart-button">
+                    Submit
+                </button>
             </form>
-
         </div>
     </main>
 
-    <div class="container-for-chart">
-    </div>
+    <div id="container-chart"></div>
 
     <section id="login-popup" class="d-none">
         <div class="header-popup">
@@ -90,35 +88,35 @@
         <div class="main-popup">
             <form action="#" method="POST" id="login-form" autocomplete="off">
                 <fieldset>
-                    <input type="text" name="login" id="name" class="input-form" required>
+                    <input type="text" name="login" id="name" class="input-form" required />
                     <label for="login">Login: </label>
                     <div class="after-input"></div>
                 </fieldset>
                 <fieldset>
-                    <input type="text" name="mail" id="mail" class="input-form" required>
+                    <input type="text" name="mail" id="mail" class="input-form" required />
                     <label for="email">E-mail: </label>
                     <div class="after-input"></div>
                 </fieldset>
                 <fieldset>
-                    <input type="password" name="pass" id="pass" class="input-form" required>
+                    <input type="password" name="pass" id="pass" class="input-form" required />
                     <label for="pass">Password: </label>
                     <div class="after-input"></div>
                 </fieldset>
                 <button class="popup-button">Submit</button>
             </form>
-
         </div>
     </section>
     <footer class="footer d-flex fx-justify-center">
-        <div class="copyright d-flex align-items-center"><span>© Sergiy <b>Petruniv</b><br>
-                petruniv.s.i@gmail.com <br>
+        <div class="copyright d-flex align-items-center">
+            <span>© Sergiy <b>Petruniv</b><br />
+                petruniv.s.i@gmail.com <br />
                 GitHub: <a href="https://github.com/SiJiP">SiJiP</a>
-            </span></div>
+            </span>
+        </div>
     </footer>
 
-    <script src="../script/chart_fetch.js"></script>
+    <script src="../script/chart_async_await.js"></script>
     <script src="../script/script.js"></script>
-
 </body>
 
 </html>
